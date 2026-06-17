@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">医疗设备管理系统</string>
+    <string name="archive_qr_hint">二维码支持：JSON（字段 name、code、dept，或 deviceName/deviceCode/department）与竖线格式「名称|编号|科室」。仅编号时可扫码后手补再保存。</string>
+</resources>

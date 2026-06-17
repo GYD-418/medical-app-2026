@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/tvSyncHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSyncOperator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textSize="12sp"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:id="@+id/tvSyncContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textSize="12sp"
+        android:textColor="@android:color/darker_gray"
+        android:textIsSelectable="true" />
+
+    <TextView
+        android:id="@+id/tvSyncError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="12sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textIsSelectable="true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/ivSyncImage"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="4dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:contentDescription="同步照片预览" />
+
+</LinearLayout>

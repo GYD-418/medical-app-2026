@@ -1,0 +1,51 @@
+plugins {
+    id("com.android.application")
+}
+
+def releaseVersion = (project.findProperty("releaseVersion") ?: "0.1").toString()
+def releaseCode = (project.findProperty("releaseCode") ?: "1").toString().toInteger()
+
+android {
+    namespace = "com.example.yiliaoapp"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.example.yiliaoapp"
+        minSdk = 26
+        targetSdk = 34
+        versionCode = releaseCode
+        versionName = "v${releaseVersion}"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+            )
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "yiliao-${variant.versionName}-${variant.buildType.name}.apk"
+        }
+    }
+}
+
+dependencies {
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
+    implementation("androidx.room:room-runtime:2.6.1")
+    annotationProcessor("androidx.room:room-compiler:2.6.1")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
+}
